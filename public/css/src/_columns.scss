@@ -1,0 +1,25 @@
+$gutter: 2.5;
+
+@mixin col ($col-size, $arg2:"", $arg3:"") {
+  $num-col: 1/$col-size;
+  // height:100px;             //remove after this works
+  // background-color: #ddd;   //remove after this works
+  // margin-bottom: 1em;   //remove after this works
+
+  @if $arg2 == "no-gutter" or $arg3 == "no-gutter" {
+    clear: none;
+    float: left;
+    width: percentage( $col-size );
+    margin-right: 0;
+  }
+  @else {
+    clear: none;
+    float: left;
+    width: percentage( ((100 - $gutter * ($num-col - 1)) / $num-col) / 100 );
+    margin-right: percentage($gutter / 100);
+    @if $arg2 == "omega" or $arg3 == "omega" {
+      margin-right: 0;
+      float: right;
+    }
+  }
+}

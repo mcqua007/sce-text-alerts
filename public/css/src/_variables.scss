@@ -1,0 +1,48 @@
+//
+// Variables
+// ---------------------------
+
+// Globals
+// -------------------------
+$baseUrl: env_or_default("STATIC_URL", "/static/");
+
+// Colors
+// -------------------------
+$white:                     #FFFFFF !default;
+$black:                     #080808 !default;
+$gray:						#595959 !default;
+$light-gray:				#BDBDBD !default;
+$lightest-gray:				#EDEDED !default;
+$dark-green:				#1f3700 !default;
+$green:						#417300 !default;
+$light-green:				#64A000 !default;
+$red:						#ff0000 !default;
+$pink:						lighten($red, 40%) !default;
+
+// Scaffolding
+// -------------------------
+$bodyBackground:            $white !default;
+$textColor:                 $black !default;
+$hrBorder:                  $black !default;
+
+// Links
+// -------------------------
+$linkColor:                 #08c !default;
+$linkColorHover:            darken($linkColor, 15%) !default;
+
+// Typography
+// -------------------------
+$selection:                 $light-green;
+$baseFontSize:              18px !default;
+$baseFontFamily:            "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$baseLineHeight:            1.2 !default;
+
+$headingsFontFamily:        inherit !default; // empty to use BS default, $baseFontFamily
+$headingsFontWeight:        500 !default;    // instead of browser default, bold
+$headingsColor:             inherit !default; // empty to use BS default, $textColor
+
+// Buttons
+// -------------------------
+$btnBackground:             $white !default;
+$btnBackgroundHighlight:    darken($white, 10%) !default;
+$btnBorder:                 #bbb !default;

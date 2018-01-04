@@ -1,0 +1,28 @@
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# CSS and JS Dev #
+######################
+public/node_modules/
+public/.sass-cache/
+public/css/styles.css
+public/Gemfile.lock
+public/js/main-built.js
+public/img/svg/built/svg-defs.svg
+
+.idea/workspace.xml
+misc.xml
+workspace.xml

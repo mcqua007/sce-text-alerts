@@ -1,0 +1,213 @@
+//
+// Layouts
+// ---------------------------
+
+$wrapper-padding: 0 $baseFontSize;
+
+.wrapper {
+  @include clearfix;
+  position: relative;
+  max-width: 1024px - ($baseFontSize * 2);
+  padding: $wrapper-padding;
+  margin: 0 auto;
+}
+
+
+
+
+.logo {
+	-webkit-user-select: none;
+	margin: 2em 0;
+	display: block;
+}
+.header-bar {
+	background-color: $gray;
+	padding: 1em 20px;
+	color:	$white;
+	margin-bottom: 2em;
+	span {
+		font-size: 1.125em;
+	}
+}
+.highlight-box {
+	background-color: $lightest-gray;
+	padding: 1em;
+	margin: 2em 0 2em 0;
+}
+.highlight-text {
+	//color: $green;
+	font-size: 1.333em;
+	font-weight: bold;
+}
+.bullet-list {
+	list-style-type: disc;
+	padding-left: 60px;
+	li {
+		margin-bottom: 1em;
+	}
+}
+.alert {
+	&.alert-danger {
+		color: $red;
+		background-color: $pink;
+		ul {
+			padding: 1em 1em 1em 2em;
+			li {
+				margin-bottom: 0.5em;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+.required-text {
+	margin-top: 1em;
+	color: $red;
+}
+.smaller {
+	font-size: 0.75em;
+}
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+.bold-label{
+	label {
+		font-weight: bold;
+	}
+}
+button, a.go-back {
+	background-color: $light-gray;
+	color: $black;
+	padding: 0.75em 2em;
+	border: 0;
+	margin: 1em 0;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+button {
+	-webkit-appearance: none;
+	float: right;
+	&:after {
+		display: inline-block;
+		content: "";
+		width: 0.5em;
+		height: 0.5em;
+		border-right: solid 3px $black;
+		border-top: solid 3px $black;
+		
+		margin-left: 0.5em;
+		@include transform(rotate(45deg));
+	}
+}
+a.go-back {
+	display: inline-block;
+	&:before {
+		display: inline-block;
+		content: "";
+		width: 0.5em;
+		height: 0.5em;
+		border-right: solid 3px $black;
+		border-top: solid 3px $black;
+
+		margin-right: 0.5em;
+		@include transform(rotate(-135deg));
+	}
+}
+input[type="text"] {
+	display: block;
+	width: 100%;
+	padding: 0.5em;
+	margin-top: 0.5em;
+	border: 1px solid $black;
+}
+input[type="checkbox"] {
+	position: absolute;
+}
+select {
+	max-width: 100%;
+}
+.checkbox-label {
+	margin-top: 1em;
+	label, .smaller {
+		display: block;
+		width: 100%;
+		padding-left: 40px;
+	}
+}
+.enrollment {
+	.bold-label {
+		margin-top: 1em;
+	}
+}
+.enrollment {
+	.label-and-span {
+		display: block;
+		margin-bottom: 0.5em;
+	}
+}
+legend {
+	display: block;
+	margin-bottom: 0.5em;
+}
+fieldset {
+	label {
+		display: inline-block;
+		margin-bottom: 0.25em;
+		margin-right: 1em;
+		white-space: nowrap;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+.not-me, .basic-link {
+	font-weight: bold;
+	text-decoration: underline;
+	color: $green;
+	&:hover, &:active {
+		color: $dark-green;
+	}
+}
+.not-me {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+.progress-bar {
+	display: none;
+}
+footer {
+	margin-top: 4em;
+	padding: 2em;
+	background-color: $lightest-gray;
+	color: $gray;
+	text-align: center;
+
+	// extend for short pages
+	box-shadow: 0 500px 0 500px $lightest-gray;
+}
+
+
+// Breaks
+// --------------------
+
+@include breakpoint($small){
+	input[type="text"] {
+		max-width: 50%;
+	}
+	button, a.go-back {
+		width: auto;
+	}
+	.not-me {
+		text-align: right;
+	}
+}
+@include breakpoint($large){
+	.progress-bar {
+		display: block;
+	}
+}

@@ -1,0 +1,14 @@
+// assume min-width (by default) if only a number
+$small: 480px;
+
+// set min-width/max-width if both values are numbers
+$medium: 768px;
+
+// set min-width/max-width if both values are numbers
+$large: 1024px;
+
+// if one value is a string, assume a feature/value pair
+// $surfboard-width: max-width 1024px;
+
+// string tests together within parentheses, assume each item is a feature value pair
+// $surfboard-height: (min-height 1000px) (orientation portrait);

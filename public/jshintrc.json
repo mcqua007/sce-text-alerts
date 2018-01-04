@@ -1,0 +1,27 @@
+{
+    "curly": true,
+    "eqeqeq": true,
+    "immed": true,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "nonew": true,
+    "sub": true,
+    "boss": true,
+    "eqnull": true,
+    "unused": true,
+    "node": true,
+    "undef": true,
+    "browser": true,
+    "trailing": true,
+    "strict": true,
+    "jquery": true,
+    "globals": {
+        "jQuery": true,
+        "console": false,
+        "module": true,
+        "document": true,
+        "define": true,
+        "iScroll": true
+    }
+}
