@@ -11,10 +11,10 @@
     <div class="highlight-box enrollment">
         <p>Please confirm below you want to change to the optional TOU rate.</p>
 
-        {!! Form::open(array('route' => ['confirmation', $account->code])) !!}
+        {!! Form::open(array('route' => ['verification'])) !!}
         <div class="bold-label checkbox-label">
             {!! Form::checkbox('agreement_1', 1, true, ['id'=>'agreement_1']) !!}
-            {!! Form::label('agreement_1', 'Yes! I would like my rate plan changed to the ' . $account->rate_plan . ' rate.' ) !!}
+            {!! Form::label('agreement_1', 'Yes! I would like my rate plan changed to the new rate.' ) !!}
         </div>
         <div class="checkbox-label">
             {!! Form::checkbox('agreement_2', 1, true, ['id'=>'agreement_2']) !!}
@@ -23,28 +23,28 @@
         <p class="required-text">* <span class="smaller">Indicates a Required Field</span></p>
         <div class="bold-label">
             {!! Form::label('phone', 'Phone Number') !!} <span class="required-text">*</span>
-            {!! Form::text('phone') !!}
+            {!! Form::text('phone', $input['phone']) !!}
         </div>
         <div class="checkbox-label">
-            {!! Form::checkbox('number_is_mobile', 1, true, ['id'=>'number_is_mobile']); !!}
+            {!! Form::checkbox('number_is_mobile', 1, $input['number_is_mobile'], ['id'=>'number_is_mobile']) !!}
             {!! Form::label('number_is_mobile', 'Yes, this is a mobile phone number.') !!}
         </div>
         <div class="checkbox-label">
-            {!! Form::checkbox('mobile_optin', 1, true, ['id'=>'mobile_optin']); !!}
+            {!! Form::checkbox('mobile_optin', 1, $input['mobile_optin'], ['id'=>'mobile_optin']) !!}
             {!! Form::label('mobile_optin', 'Yes, I would like to receive occasional text message updates from SCE, including information about rebates, savings, and promotions.') !!} <span class="smaller">Text message alerts may be subject to charges by your wireless carrier.</span>
         </div>
         <div class="bold-label">
                 {!! Form::label('email', 'Email') !!}
-            {!! Form::text('email') !!}
+            {!! Form::text('email', $input['email']) !!}
         </div>
         <div class="checkbox-label">
-            {!! Form::checkbox('email_optin', 1, true, ['id'=>'email_optin']); !!}
+            {!! Form::checkbox('email_optin', 1, $input['email_optin'], ['id'=>'email_optin']) !!}
             {!! Form::label('email_optin', 'Yes, I would like to receive occasional email updates from SCE, including information about rebates, savings, and promotions.') !!}
         </div>
     </div>
     <p>For further assistance please call <strong>1-866-678-7964</strong> Monday-Friday from 8 a.m. to 5 p.m.</p>
     <button type="submit">Submit</button>
-    <a href="{{route('verification', $account->code)}}" class="go-back">Go Back</a>
+    <a href="{{route('index', $account)}}" class="go-back">Go Back</a>
     {!!Form::close()!!}
 
 @endsection

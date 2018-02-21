@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/{code}', ['uses' => 'MainController@index', 'as' => 'index']);
+Route::get('/', ['uses' => 'MainController@index', 'as' => 'index']);
 
-Route::any('/{code}/verification', ['uses' => 'MainController@verification', 'as' => 'verification']);
+Route::any('/enrollment', ['uses' => 'MainController@enrollment', 'as' => 'enrollment']);
 
-Route::any('/{code}/enrollment', ['uses' => 'MainController@enrollment', 'as' => 'enrollment']);
+Route::any('/verification', ['uses' => 'MainController@verification', 'as' => 'verification']);
 
-Route::any('/{code}/confirmation', ['uses' => 'MainController@confirmation', 'as' => 'confirmation']);
+Route::any('/confirmation', ['uses' => 'MainController@confirmation', 'as' => 'confirmation']);
 
 
-Route::any('/{code}/not-me', ['uses' => 'MainController@not_me', 'as' => 'not-me']);
+Route::any('/not-me', ['uses' => 'MainController@not_me', 'as' => 'not-me']);
 

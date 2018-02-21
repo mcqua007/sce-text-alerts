@@ -8,9 +8,9 @@
 
 	<h1>Maintain Control and Maximize Savings</h1>
 
-	<p>Switching to the optional {{$account->rate_plan}} rate. plan is easy, and you always have the opportunity to change back. To make the switch, please enter the last four digits of your Service Account Number found at the bottom of the letter you received or found on your SCE bill.</p>
+	<p>Switching to the optional rate. plan is easy, and you always have the opportunity to change back. To make the switch, please enter the last four digits of your Service Account Number found at the bottom of the letter you received or found on your SCE bill.</p>
 
-	{!!Form::open(array('route' => ['verification', $account->code]))!!}
+	{!!Form::open(array('route' => ['enrollment']))!!}
 		<div class="highlight-box bold-label">
 			{!! Form::label('service_account_number', 'Service Account Number') !!} <span class="smaller">(last 4 digits only)</span>
 			{!! Form::text('service_account_number', $input['service_account_number']) !!}

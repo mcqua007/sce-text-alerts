@@ -3,11 +3,9 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
-
 use Illuminate\Http\Request as LaravelRequest;
 
-
-class CodeLookupRequest extends Request
+class IndexRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,7 +28,7 @@ class CodeLookupRequest extends Request
             return [];
         }
         return [
-            'service_account_number' => 'required|digits:4|numeric',
+            'service_account_number' => ['required', 'min:10', 'max:13', 'regex:/^[\+0-9 \(\)\-]+$/']
         ];
     }
 }

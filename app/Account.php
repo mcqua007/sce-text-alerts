@@ -9,14 +9,13 @@ class Account extends Model
     protected $table = 'accounts';
 
     protected $casts = [
-        'updated' => 'boolean',
         'number_is_mobile' => 'boolean',
         'mobile_optin' => 'boolean',
         'email_optin' => 'boolean'
     ];
 
     protected $fillable = [
-            'updated',
+            'service_account_number',
 			'phone',
 			'number_is_mobile',
 			'mobile_optin',
@@ -24,7 +23,4 @@ class Account extends Model
 			'email_optin'
     ];
 
-    public function last_four() {
-        return substr($this->attributes['service_account_number'], -4);
-    }
 }

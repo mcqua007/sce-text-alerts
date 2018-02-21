@@ -12,7 +12,8 @@
     <p>We are committed to helping you manage your energy use and costs. If you have any questions, please call <strong>1-866-678-7964</strong> Monday-Friday from 8 a.m. to 5 p.m. or visit <a class="basic-link" href="http://on.sce.com/residentialrates" target="_blank">on.sce.com/residentialrates</a>.</p>
     
     <h2 style="color:#cccccc;">Data Below Displayed For Testing Only</h2>
-	<p><strong style="color:#cccccc;">phone:</strong> {{$account->phone}}</p>
+    <p><strong style="color:#cccccc;">service_account_number:</strong> {{$account->service_account_number}}</p>
+    <p><strong style="color:#cccccc;">phone:</strong> {{$account->phone}}</p>
 	<p><strong style="color:#cccccc;">number_is_mobile:</strong> <?php if ($account->number_is_mobile){echo 'yes';}else{echo 'no';} ?></p>
 	<p><strong style="color:#cccccc;">mobile_optin:</strong> <?php if ($account->mobile_optin){echo 'yes';}else{echo 'no';} ?></p>
 	<p><strong style="color:#cccccc;">email:</strong> <?php if ($account->email){echo $account->email;}else{echo '-';} ?></p>
