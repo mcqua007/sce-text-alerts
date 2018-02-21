@@ -158,7 +158,7 @@ class MainController extends Controller
      * @param Request $request
      * @return $this|\Illuminate\Http\RedirectResponse
      */
-    public function not_me(Request $request)
+    public function start_over(Request $request)
     {
         $request->session()->flush();
         return redirect()->route('index');

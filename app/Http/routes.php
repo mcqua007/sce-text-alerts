@@ -20,5 +20,5 @@ Route::any('/verification', ['uses' => 'MainController@verification', 'as' => 'v
 Route::any('/confirmation', ['uses' => 'MainController@confirmation', 'as' => 'confirmation']);
 
 
-Route::any('/not-me', ['uses' => 'MainController@not_me', 'as' => 'not-me']);
+Route::any('/start-over', ['uses' => 'MainController@start_over', 'as' => 'start-over']);
 

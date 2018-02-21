@@ -21,7 +21,7 @@
     {!!Form::open(array('route' => ['confirmation']))!!}
     <button type="submit">Continue</button>
     <a href="{{route('enrollment')}}" class="go-back">Go Back</a>
-    <a href="{{route('not-me')}}" class="not-me">This is not my Account</a>
+    <a href="{{route('start-over')}}" class="start-over">Start Over</a>
     {!!Form::close()!!}
 
 @endsection

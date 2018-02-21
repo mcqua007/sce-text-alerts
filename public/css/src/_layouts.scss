@@ -164,7 +164,7 @@ fieldset {
 		}
 	}
 }
-.not-me, .basic-link {
+.start-over, .basic-link {
 	font-weight: bold;
 	text-decoration: underline;
 	color: $green;
@@ -172,7 +172,7 @@ fieldset {
 		color: $dark-green;
 	}
 }
-.not-me {
+.start-over {
 	display: block;
 	width: 100%;
 	text-align: center;
@@ -202,7 +202,7 @@ footer {
 	button, a.go-back {
 		width: auto;
 	}
-	.not-me {
+	.start-over {
 		text-align: right;
 	}
 }
