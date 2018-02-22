@@ -73,10 +73,16 @@ class MainController extends Controller
         // Get the inputs if in the session and display it in the view
         $input = [
             'phone' => ($request->session()->has('phone')) ? $request->session()->get('phone') : '',
-            'number_is_mobile' => ($request->session()->has('number_is_mobile')) ? $request->session()->get('number_is_mobile') : '',
+            'first_name' => ($request->session()->has('first_name')) ? $request->session()->get('first_name') : '',
+            'last_name' => ($request->session()->has('last_name')) ? $request->session()->get('last_name') : '',
+            'street_number' => ($request->session()->has('street_number')) ? $request->session()->get('street_number') : '',
+            'street_name' => ($request->session()->has('street_name')) ? $request->session()->get('street_name') : '',
+            'zip_code' => ($request->session()->has('zip_code')) ? $request->session()->get('zip_code') : '',
             'mobile_optin' => ($request->session()->has('mobile_optin')) ? $request->session()->get('mobile_optin') : '',
             'email' => ($request->session()->has('email')) ? $request->session()->get('email') : '',
-            'email_optin' => ($request->session()->has('email_optin')) ? $request->session()->get('email_optin') : ''
+            'email_optin' => ($request->session()->has('email_optin')) ? $request->session()->get('email_optin') : '',
+            'on_peak_alert' => ($request->session()->has('on_peak_alert')) ? $request->session()->get('on_peak_alert') : '',
+            'off_peak_alert' => ($request->session()->has('off_peak_alert')) ? $request->session()->get('off_peak_alert') : ''
         ];
 
         return view('enrollment')->with(['account' => $account, 'input' => $input]);
@@ -92,14 +98,18 @@ class MainController extends Controller
     public function verification(EnrollmentRequest $request, Account $account)
     {
 
-        if ( $request->input('number_is_mobile') != 1){
-            $request->merge(array('number_is_mobile' => false));
-        }
+        // Make sure that session is also updated when false 0 values are passed
         if ( $request->input('mobile_optin') != 1){
             $request->merge(array('mobile_optin' => false));
         }
         if ( $request->input('email_optin') != 1){
             $request->merge(array('email_optin' => false));
+        }
+        if ( $request->input('on_peak_alert') != 1){
+            $request->merge(array('on_peak_alert' => false));
+        }
+        if ( $request->input('off_peak_alert') != 1){
+            $request->merge(array('off_peak_alert' => false));
         }
 
         // Record all the inputs into the session
@@ -144,11 +154,17 @@ class MainController extends Controller
 
         // Clear inputs stored in session
         $request->session()->forget('service_account_number');
+        $request->session()->forget('first_name');
+        $request->session()->forget('last_name');
+        $request->session()->forget('street_number');
+        $request->session()->forget('street_name');
+        $request->session()->forget('zip_code');
         $request->session()->forget('phone');
-        $request->session()->forget('number_is_mobile');
         $request->session()->forget('mobile_optin');
         $request->session()->forget('email');
         $request->session()->forget('email_optin');
+        $request->session()->forget('on_peak_alert');
+        $request->session()->forget('off_peak_alert');
 
 
         return view('confirmation')->with('account', $account);

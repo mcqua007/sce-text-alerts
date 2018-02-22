@@ -35,7 +35,6 @@ $wrapper-padding: 0 $baseFontSize;
 	margin: 2em 0 2em 0;
 }
 .highlight-text {
-	//color: $green;
 	font-size: 1.333em;
 	font-weight: bold;
 }
@@ -62,7 +61,6 @@ $wrapper-padding: 0 $baseFontSize;
 	}
 }
 .required-text {
-	margin-top: 1em;
 	color: $red;
 }
 .smaller {
@@ -74,9 +72,12 @@ fieldset {
 	padding: 0;
 }
 .bold-label{
-	label {
+	label, p {
 		font-weight: bold;
 	}
+}
+.alert-choices {
+	padding-top: 1em;
 }
 button, a.go-back {
 	background-color: $light-gray;
@@ -167,9 +168,9 @@ fieldset {
 .start-over, .basic-link {
 	font-weight: bold;
 	text-decoration: underline;
-	color: $green;
+	color: #000000;
 	&:hover, &:active {
-		color: $dark-green;
+		color: $gray;
 	}
 }
 .start-over {

@@ -28,13 +28,17 @@ class EnrollmentRequest extends Request
             return [];
         }
         return [
-            'agreement_1' => ['accepted'],
-            'agreement_2' => ['accepted'],
+            'first_name' => ['required', 'regex:/^[a-zA-Z \-]+$/'],
+            'last_name' => ['required', 'regex:/^[a-zA-Z \-]+$/'],
+            'street_number' => ['required', 'max:10', 'regex:/^[0-9 \/\-]+$/'],
+            'street_name' => ['required', 'regex:/^[0-9a-zA-Z \.\-]+$/'],
+            'zip_code' => ['required', 'max:10', 'regex:/^[0-9 \-]+$/'],
             'phone' => ['required', 'min:7', 'max:25', 'regex:/^[\+0-9 \(\)\-]+$/'],
-            'number_is_mobile' => ['boolean'],
-            'mobile_optin' => ['boolean'],
+            'mobile_optin' => ['required', 'boolean'],
             'email' => ['required_with:email_optin', 'email'],
-            'email_optin' => ['boolean']
+            'email_optin' => ['boolean'],
+            'on_peak_alert' => ['required_without:off_peak_alert'],
+            'off_peak_alert' => ['required_without:on_peak_alert']
         ];
     }
 }

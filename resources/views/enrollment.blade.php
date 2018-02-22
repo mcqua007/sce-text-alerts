@@ -4,45 +4,83 @@
 @section('title', 'Enrollment')
 
 @section('content')
-    <svg class="progress-bar" width="952" height="102">
-        <image style="-webkit-user-select: none" xlink:href="/img/step_2.svg" src="/img/step_2.gif" width="952" height="102" alt="Progress Bar at Step 2 of 3: Enrollment"/>
-    </svg>
     <h1>Enrollment</h1>
-    <div class="highlight-box enrollment">
-        <p>Please confirm below you want to change to the optional TOU rate.</p>
-
-        {!! Form::open(array('route' => ['verification'])) !!}
-        <div class="bold-label checkbox-label">
-            {!! Form::checkbox('agreement_1', 1, true, ['id'=>'agreement_1']) !!}
-            {!! Form::label('agreement_1', 'Yes! I would like my rate plan changed to the new rate.' ) !!}
+    <p>Please complete the form below. Remember, a valid mobile number is required to receive text message alerts.</p>
+    <p>When selecting the alerts you would like to receive, please note, alerts will be sent at the beginning of the peak period(s) you select and on weekdays only. The on-peak alert would come between 2pm and 5pm, and the off-peak alert would come between 8pm and 9pm, depending on your TOU rate's peak hours.</p>
+    <div class="graphics">
+        <div class="col1">
+            <img src="" alt="" />
+            <p><strong>On-Peak</strong> Start Text Alert<br> 2pm-5pm</p>
         </div>
-        <div class="checkbox-label">
-            {!! Form::checkbox('agreement_2', 1, true, ['id'=>'agreement_2']) !!}
-            {!! Form::label('agreement_2', 'I fully understand all the provisions contained in the requested optional rate schedule and that any rate analysis performed on my service account is simply an estimate of costs and savings based on available information and that my actual bill may differ from this estimate. I also understand that I have the option to choose an alternate rate plan at any time. But, if I switch to an alternate rate plan, I will not be able to make another change for a full 12 months. I further understand that service under the new TOU rate plan will typically become effective at the start of the next routine billing cycle date following SCE&#39;s processing of a rate change request. This rate change form is a free form version of CSD-179-B. All terms and conditions shall remain consistent and applicable to customers signing any effective variation of Form CSD-179-B.') !!}
-        </div>
-        <p class="required-text">* <span class="smaller">Indicates a Required Field</span></p>
-        <div class="bold-label">
-            {!! Form::label('phone', 'Phone Number') !!} <span class="required-text">*</span>
-            {!! Form::text('phone', $input['phone']) !!}
-        </div>
-        <div class="checkbox-label">
-            {!! Form::checkbox('number_is_mobile', 1, $input['number_is_mobile'], ['id'=>'number_is_mobile']) !!}
-            {!! Form::label('number_is_mobile', 'Yes, this is a mobile phone number.') !!}
-        </div>
-        <div class="checkbox-label">
-            {!! Form::checkbox('mobile_optin', 1, $input['mobile_optin'], ['id'=>'mobile_optin']) !!}
-            {!! Form::label('mobile_optin', 'Yes, I would like to receive occasional text message updates from SCE, including information about rebates, savings, and promotions.') !!} <span class="smaller">Text message alerts may be subject to charges by your wireless carrier.</span>
-        </div>
-        <div class="bold-label">
-                {!! Form::label('email', 'Email') !!}
-            {!! Form::text('email', $input['email']) !!}
-        </div>
-        <div class="checkbox-label">
-            {!! Form::checkbox('email_optin', 1, $input['email_optin'], ['id'=>'email_optin']) !!}
-            {!! Form::label('email_optin', 'Yes, I would like to receive occasional email updates from SCE, including information about rebates, savings, and promotions.') !!}
+        <div class="col1">
+            <img src="" alt="" />
+            <p><strong>Off-Peak</strong> Start Text Alert<br> 8pm-9pm</p>
         </div>
     </div>
-    <p>For further assistance please call <strong>1-866-678-7964</strong> Monday-Friday from 8 a.m. to 5 p.m.</p>
+
+    @include('partials.errors')
+    <div class="highlight-box enrollment">
+        {!! Form::open(array('route' => ['verification'])) !!}
+        <p class="required-text">* <span class="smaller">Indicates a Required Field</span></p>
+        <div class="bold-label">
+            {!! Form::label('first_name', 'First Name') !!} <span class="required-text">*</span>
+            {!! Form::text('first_name', $input['first_name']) !!}
+        </div>
+        <div class="bold-label">
+            {!! Form::label('last_name', 'Last Name') !!} <span class="required-text">*</span>
+            {!! Form::text('last_name', $input['last_name']) !!}
+        </div>
+        <div class="bold-label">
+            <p>Service Address: <span class="required-text">*</span></p>
+        </div>
+        <div>
+            <div>
+                {!! Form::label('street_number', 'Street Number') !!} <span class="required-text">*</span>
+                {!! Form::text('street_number', $input['street_number'], array('maxlength'=>'10')) !!}
+            </div>
+            <div>
+                {!! Form::label('street_name', 'Street Name') !!} <span class="required-text">*</span>
+                {!! Form::text('street_name', $input['street_name']) !!}
+            </div>
+            <div>
+                {!! Form::label('zip_code', 'Zip Code') !!} <span class="required-text">*</span>
+                {!! Form::text('zip_code', $input['zip_code'], array('maxlength'=>'10')) !!}
+            </div>
+        </div>
+        <div class="phone-group">
+            <div class="bold-label">
+                {!! Form::label('phone', 'Mobile Phone') !!} <span class="required-text">*</span>
+                {!! Form::text('phone', $input['phone'], array('placeholder'=>'###-###-####', 'maxlength'=>'25')) !!}
+            </div>
+            <div class="checkbox-label">
+                {!! Form::checkbox('mobile_optin', 1, $input['mobile_optin'], ['id'=>'mobile_optin']) !!}
+                <label for="mobile_optin"><span class="required-text">*</span> Yes, I am the authorized user of this mobile number.</label>
+            </div>
+        </div>
+        <div class="email-group">
+            <div class="bold-label">
+                {!! Form::label('email', 'Email Address') !!}
+                {!! Form::text('email', $input['email'], array('placeholder'=>'email@example.com')) !!}
+            </div>
+            <div class="checkbox-label">
+                {!! Form::checkbox('email_optin', 1, $input['email_optin'], ['id'=>'email_optin']) !!}
+                {!! Form::label('email_optin', 'Yes, I agree to receive occasional emails from Southern California Edison.') !!}
+            </div>
+        </div>
+        <div class="bold-label alert-choices">
+            <p>Please Select All That Apply: <span class="required-text">*</span></p>
+        </div>
+        <div class="checkbox-label">
+            {!! Form::checkbox('on_peak_alert', 1, $input['on_peak_alert'], ['id'=>'on_peak_alert']) !!}
+            <label for="on_peak_alert">Yes, I would like to receive a text alert at the beginning of the <strong>ON-PEAK</strong> Period. (when rates are higher)</label>
+            <span class="smaller">Text message alerts may be subject to charges by your wireless carrier.</span>
+        </div>
+        <div class="checkbox-label">
+            {!! Form::checkbox('off_peak_alert', 1, $input['off_peak_alert'], ['id'=>'off_peak_alert']) !!}
+            <label for="off_peak_alert">Yes, I would like to receive a text alert at the beginning of the <strong>OFF-PEAK</strong> Period. (when rates are lower)</label>
+            <span class="smaller">Text message alerts may be subject to charges by your wireless carrier.</span>
+        </div>
+    </div>
     <button type="submit">Submit</button>
     <a href="{{route('index', $account)}}" class="go-back">Go Back</a>
     {!!Form::close()!!}

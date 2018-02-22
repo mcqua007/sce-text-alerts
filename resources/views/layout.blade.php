@@ -5,7 +5,7 @@
         <head>
         <meta charset="utf-8">
 
-        <title>@yield('title') | Switch to an Optional TOU Rate - SCE</title>
+        <title>@yield('title') | Text Alert Enrollment - SCE</title>
         <meta name="description" content="Meta Description">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,8 +40,6 @@
                     <image style="-webkit-user-select: none" xlink:href="/img/logo.svg" src="/img/logo.png" width="149" height="53" />
                 </svg>
             </a>
-            <div class="header-bar"><span>Switch to an Optional TOU Rate</span></div>
-            @include('partials.errors')
 			@yield('content')
 		</div>
         <footer>

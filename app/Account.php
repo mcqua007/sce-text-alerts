@@ -9,18 +9,25 @@ class Account extends Model
     protected $table = 'accounts';
 
     protected $casts = [
-        'number_is_mobile' => 'boolean',
         'mobile_optin' => 'boolean',
-        'email_optin' => 'boolean'
+        'email_optin' => 'boolean',
+        'on_peak_alert' => 'boolean',
+        'off_peak_alert' => 'boolean'
     ];
 
     protected $fillable = [
             'service_account_number',
-			'phone',
-			'number_is_mobile',
+            'first_name',
+            'last_name',
+            'street_number',
+            'street_name',
+            'zip_code',
+            'phone',
 			'mobile_optin',
 			'email',
-			'email_optin'
+            'email_optin',
+            'on_peak_alert',
+            'off_peak_alert'
     ];
 
 }
