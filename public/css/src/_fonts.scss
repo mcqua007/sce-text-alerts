@@ -1,6 +1,14 @@
 //
 // Font Embeds
 // ---------------------------
+@font-face {
+    font-family: 'ostrich_sansheavy';
+    src: url('/fonts/ostrichsans-heavy-webfont.woff2') format('woff2'),
+         url('/fonts/ostrichsans-heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 // example:
 // @font-face {

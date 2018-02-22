@@ -4,7 +4,7 @@
 @section('title', 'Verification')
 
 @section('content')
-    <div class="progress-bar"><span>Provide Info</span><span class="active">Verify Info</span><span>Confirmation</span></div>
+    <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="1" aria-valuemax="3"><span class="complete">Provide Info</span><span class="active">Verify Info</span><span>Confirmation</span></div>
     <h1>Verification</h1>
     <p>Please confirm your account information.</p>
 

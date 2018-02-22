@@ -4,17 +4,17 @@
 @section('title', 'Enrollment')
 
 @section('content')
-    <div class="progress-bar"><span class="active">Provide Info</span><span>Verify Info</span><span>Confirmation</span></div>
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3"><span class="active">Provide Info</span><span>Verify Info</span><span>Confirmation</span></div>
     <h1>Enrollment</h1>
     <p>Please complete the form below. Remember, a valid mobile number is required to receive text message alerts.</p>
     <p>When selecting the alerts you would like to receive, please note, alerts will be sent at the beginning of the peak period(s) you select and on <strong>weekdays only</strong>. The on-peak alert would come between 2pm and 5pm, and the off-peak alert would come between 8pm and 9pm, depending on your TOU rate's peak hours.</p>
-    <div class="graphics">
+    <div class="alert-graphics">
         <div class="col1">
-            <img src="" alt="" />
+            <img src="/img/on-peak.png" alt="On-Peak Alert Time Graphic" />
             <p><strong>On-Peak</strong> Start Text Alert<br> 2pm-5pm</p>
         </div>
         <div class="col1">
-            <img src="" alt="" />
+            <img src="/img/off-peak.png" alt="Off-Peak Alert Time Graphic" />
             <p><strong>Off-Peak</strong> Start Text Alert<br> 8pm-9pm</p>
         </div>
     </div>
@@ -23,49 +23,53 @@
     <div class="highlight-box enrollment">
         {!! Form::open(array('route' => ['verification'])) !!}
         <p class="required-text">* <span class="smaller">Indicates a Required Field</span></p>
-        <div class="bold-label">
-            {!! Form::label('first_name', 'First Name') !!} <span class="required-text">*</span>
-            {!! Form::text('first_name', $input['first_name']) !!}
+        <div class="name-group">
+            <div class="first-name bold-label">
+                {!! Form::label('first_name', 'First Name') !!} <span class="required-text">*</span>
+                {!! Form::text('first_name', $input['first_name'], array('placeholder'=>'Jane')) !!}
+            </div>
+            <div class="last-name bold-label">
+                {!! Form::label('last_name', 'Last Name') !!} <span class="required-text">*</span>
+                {!! Form::text('last_name', $input['last_name'], array('placeholder'=>'Doe')) !!}
+            </div>
         </div>
-        <div class="bold-label">
-            {!! Form::label('last_name', 'Last Name') !!} <span class="required-text">*</span>
-            {!! Form::text('last_name', $input['last_name']) !!}
-        </div>
-        <div class="bold-label">
-            <p>Service Address: <span class="required-text">*</span></p>
-        </div>
-        <div>
-            <div>
+        <div class="service-address-group">
+            <div class="bold-label">
+                <p>Service Address: <span class="required-text">*</span></p>
+            </div>
+            <div class="street-number">
                 {!! Form::label('street_number', 'Street Number') !!} <span class="required-text">*</span>
-                {!! Form::text('street_number', $input['street_number'], array('maxlength'=>'10')) !!}
+                {!! Form::text('street_number', $input['street_number'], array('placeholder'=>'####', 'maxlength'=>'10')) !!}
             </div>
-            <div>
+            <div class="street-name">
                 {!! Form::label('street_name', 'Street Name') !!} <span class="required-text">*</span>
-                {!! Form::text('street_name', $input['street_name']) !!}
+                {!! Form::text('street_name', $input['street_name'], array('placeholder'=>'Main St.', 'maxlength'=>'10')) !!}
             </div>
-            <div>
+            <div class="zip-code">
                 {!! Form::label('zip_code', 'Zip Code') !!} <span class="required-text">*</span>
-                {!! Form::text('zip_code', $input['zip_code'], array('maxlength'=>'10')) !!}
+                {!! Form::text('zip_code', $input['zip_code'], array('placeholder'=>'#####', 'maxlength'=>'10')) !!}
             </div>
         </div>
-        <div class="phone-group">
-            <div class="bold-label">
-                {!! Form::label('phone', 'Mobile Phone') !!} <span class="required-text">*</span>
-                {!! Form::text('phone', $input['phone'], array('placeholder'=>'###-###-####', 'maxlength'=>'25')) !!}
+        <div class="contact-group">
+            <div class="phone-group">
+                <div class="bold-label">
+                    {!! Form::label('phone', 'Mobile Phone') !!} <span class="required-text">*</span>
+                    {!! Form::text('phone', $input['phone'], array('placeholder'=>'###-###-####', 'maxlength'=>'25')) !!}
+                </div>
+                <div class="checkbox-label">
+                    {!! Form::checkbox('mobile_optin', 1, $input['mobile_optin'], ['id'=>'mobile_optin']) !!}
+                    <label for="mobile_optin"><span class="required-text">*</span> Yes, I am the authorized user of this mobile number.</label>
+                </div>
             </div>
-            <div class="checkbox-label">
-                {!! Form::checkbox('mobile_optin', 1, $input['mobile_optin'], ['id'=>'mobile_optin']) !!}
-                <label for="mobile_optin"><span class="required-text">*</span> Yes, I am the authorized user of this mobile number.</label>
-            </div>
-        </div>
-        <div class="email-group">
-            <div class="bold-label">
-                {!! Form::label('email', 'Email Address') !!}
-                {!! Form::text('email', $input['email'], array('placeholder'=>'email@example.com')) !!}
-            </div>
-            <div class="checkbox-label">
-                {!! Form::checkbox('email_optin', 1, $input['email_optin'], ['id'=>'email_optin']) !!}
-                {!! Form::label('email_optin', 'Yes, I agree to receive occasional emails from Southern California Edison.') !!}
+            <div class="email-group">
+                <div class="bold-label">
+                    {!! Form::label('email', 'Email Address') !!}
+                    {!! Form::text('email', $input['email'], array('placeholder'=>'email@example.com')) !!}
+                </div>
+                <div class="checkbox-label">
+                    {!! Form::checkbox('email_optin', 1, $input['email_optin'], ['id'=>'email_optin']) !!}
+                    {!! Form::label('email_optin', 'Yes, I agree to receive occasional emails from Southern California Edison.') !!}
+                </div>
             </div>
         </div>
         <div class="bold-label alert-choices">

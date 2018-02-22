@@ -5,14 +5,12 @@
 @section('home-header')
 	<div class="home-header">
 		<div class="image">
-			<img src="" alt="" />
+			<img src="/img/couple-in-kitchen.jpg" alt="Husband shows wife a recently received text alert while in their kitchen" />
 		</div>
 		<div class="text">
 			<div class="text-inner-wrap">
 				<h1>Time-Of-Use (TOU)<br> Text Alert Enrollment</h1>
-				<div class="graphic">
-					<img src="" alt="" />
-				</div>
+				<img src="/img/off-peak.png" alt="Clock and mobile device receiving a text alert." />
 			</div>
 		</div>
 	</div>
