@@ -4,6 +4,7 @@
 @section('title', 'Confirmation')
 
 @section('content')
+    <div class="progress-bar"><span>Provide Info</span><span>Verify Info </span><span class="active">Confirmation</span></div>
     <h1>Confirmation</h1>
     <p class="highlight-text">Thank you for enrolling in TOU Text Alerts!</p>
     <p>You will start receiving your text alerts soon. Please allow up to five business days for your enrollment to be processed.</p>

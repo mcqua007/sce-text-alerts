@@ -40,10 +40,13 @@
                     <image style="-webkit-user-select: none" xlink:href="/img/logo.svg" src="/img/logo.png" width="149" height="53" />
                 </svg>
             </a>
+        </div>
+        @yield('home-header')
+        <div class="wrapper">
 			@yield('content')
 		</div>
         <footer>
-            <div class="wrapper smaller">&copy; <?php echo date("Y"); ?> Southern California Edison</div>
+            <div class="wrapper smaller"><a class="basic-link" href="https://www.sce.com/wps/portal/home/privacy/" target="_blank">Privacy Policy</a> | &copy; <?php echo date("Y"); ?> Southern California Edison. All rights reserved.</div>
         </footer>
         <!--<script src="/js/libs/require.js" data-main="/js/app/init"></script>-->
         <!--<script src="/js/main-built.js"></script>-->

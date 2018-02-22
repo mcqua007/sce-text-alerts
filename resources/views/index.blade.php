@@ -2,9 +2,23 @@
 
 @section('title', 'Get Started')
 
-@section('content')
-	<h1>Time-Of-Use (TOU)<br> Text Alert Enrollment</h1>
+@section('home-header')
+	<div class="home-header">
+		<div class="image">
+			<img src="" alt="" />
+		</div>
+		<div class="text">
+			<div class="text-inner-wrap">
+				<h1>Time-Of-Use (TOU)<br> Text Alert Enrollment</h1>
+				<div class="graphic">
+					<img src="" alt="" />
+				</div>
+			</div>
+		</div>
+	</div>
+@endsection
 
+@section('content')
 	<p>Thank you for switching to a Time-of-Use (TOU) rate. Recognizing higher priced peak period hours, and adjusting your usage accordingly, is the best way to get the most of your new rate structure. To help you remember these key times of day, we are pleased to offer you TOU Text Alerts.</p>
 
 	<p>TOU Text Alerts are daily text notifications, sent on <strong>weekdays only</strong>, to help remind you of on-peak and/or off-peak periods. You may select to receive alert messages when they’ll help you the most. And, if you decide you no longer want to receive text alerts, you can simply reply &ldquo;STOP&rdquo; to one of the messages and you will be promptly removed.</p>

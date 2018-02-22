@@ -4,9 +4,10 @@
 @section('title', 'Enrollment')
 
 @section('content')
+    <div class="progress-bar"><span class="active">Provide Info</span><span>Verify Info</span><span>Confirmation</span></div>
     <h1>Enrollment</h1>
     <p>Please complete the form below. Remember, a valid mobile number is required to receive text message alerts.</p>
-    <p>When selecting the alerts you would like to receive, please note, alerts will be sent at the beginning of the peak period(s) you select and on weekdays only. The on-peak alert would come between 2pm and 5pm, and the off-peak alert would come between 8pm and 9pm, depending on your TOU rate's peak hours.</p>
+    <p>When selecting the alerts you would like to receive, please note, alerts will be sent at the beginning of the peak period(s) you select and on <strong>weekdays only</strong>. The on-peak alert would come between 2pm and 5pm, and the off-peak alert would come between 8pm and 9pm, depending on your TOU rate's peak hours.</p>
     <div class="graphics">
         <div class="col1">
             <img src="" alt="" />
