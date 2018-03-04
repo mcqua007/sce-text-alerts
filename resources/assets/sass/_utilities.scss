@@ -15,12 +15,6 @@
 %invisible { visibility: hidden; }
 %visible { visibility: visible; }
 
-// Clearing floats
-%clearfix { @include clearfix; }
-
-// Accessible yet invisible text
-%hide-text { @include hide-text; }
-
 // No pointer events
 %no-pointer-events { pointer-events: none; }
 

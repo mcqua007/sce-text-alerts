@@ -14,7 +14,7 @@
 // (http://paulirish.com/2012/box-sizing-border-box-ftw/)
 // Use with caution if app needs to support oldIE (6,7,8)
 * {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 // Selection

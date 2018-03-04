@@ -9,7 +9,7 @@ h1,h2 {
 }
 
 .wrapper {
-  @include clearfix;
+@include clearfix;
   position: relative;
   max-width: 1024px - ($baseFontSize * 2);
   padding: $wrapper-padding;
@@ -120,9 +120,9 @@ button {
 		height: 0.5em;
 		border-right: solid 3px $black;
 		border-top: solid 3px $black;
-		
+
 		margin-left: 0.5em;
-		@include transform(rotate(45deg));
+		transform: rotate(45deg);
 	}
 }
 a.go-back {
@@ -136,7 +136,7 @@ a.go-back {
 		border-top: solid 3px $black;
 
 		margin-right: 0.5em;
-		@include transform(rotate(-135deg));
+		transform: rotate(-135deg);
 	}
 }
 input[type="text"] {
@@ -232,7 +232,7 @@ footer {
 // Breaks
 // --------------------
 
-@include breakpoint($small){
+@include for-large-phone(){
 	.home-header {
 		.text {
 			h1 {
@@ -254,7 +254,7 @@ footer {
 		}
 	}
 }
-@include breakpoint($medium){
+@include for-tablet-portrait-up(){
 	.home-header {
 		@include pie-clearfix;
 		.image {
@@ -313,7 +313,7 @@ footer {
 		@include col(1/3, omega);
 	}
 }
-@include breakpoint($large){
+@include for-tablet-landscape-up(){
 	.home-header {
 		.text {
 			h1 {
@@ -326,7 +326,8 @@ footer {
 		margin: 0 auto;
 	}
 }
-@include breakpoint(1500px){
+
+@include for-desktop-up(){
 	.home-header {
 		.text {
 			h1 {
