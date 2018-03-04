@@ -48,7 +48,6 @@
         <footer>
             <div class="wrapper smaller"><a class="basic-link" href="https://www.sce.com/wps/portal/home/privacy/" target="_blank">Privacy Policy</a> | &copy; <?php echo date("Y"); ?> Southern California Edison. All rights reserved.</div>
         </footer>
-        <!--<script src="/js/libs/require.js" data-main="/js/app/init"></script>-->
-        <!--<script src="/js/main-built.js"></script>-->
+        <script src="/js/index.js"></script>
 	</body>
 </html>
