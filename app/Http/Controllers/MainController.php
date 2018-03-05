@@ -37,7 +37,7 @@ class MainController extends Controller
 
         // Get the service_account_number if in the session and display it in the view
         $input = [
-            'service_account_number' => ($request->session()->has('service_account_number')) ? $request->session()->get('service_account_number') : ''
+            'service_account_number' => ($request->session()->has('service_account_number')) ? $request->session()->get('service_account_number') : '3-'
         ];
 
     	return view('index')->with(['account' => $account, 'input' => $input]);
@@ -197,19 +197,18 @@ class MainController extends Controller
         }
 
         // Clear inputs stored in session
-        // $request->session()->forget('service_account_number');
-        // $request->session()->forget('first_name');
-        // $request->session()->forget('last_name');
-        // $request->session()->forget('street_number');
-        // $request->session()->forget('street_name');
-        // $request->session()->forget('zip_code');
-        // $request->session()->forget('phone');
-        // $request->session()->forget('mobile_optin');
-        // $request->session()->forget('email');
-        // $request->session()->forget('email_optin');
-        // $request->session()->forget('on_peak_alert');
-        // $request->session()->forget('off_peak_alert');
-        // $request->session()->flush();
+        $request->session()->forget('service_account_number');
+        $request->session()->forget('first_name');
+        $request->session()->forget('last_name');
+        $request->session()->forget('street_number');
+        $request->session()->forget('street_name');
+        $request->session()->forget('zip_code');
+        $request->session()->forget('phone');
+        $request->session()->forget('mobile_optin');
+        $request->session()->forget('email');
+        $request->session()->forget('email_optin');
+        $request->session()->forget('on_peak_alert');
+        $request->session()->forget('off_peak_alert');
 
 
         return view('confirmation')->with('account', $account);
