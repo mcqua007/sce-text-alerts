@@ -1,0 +1,56 @@
+version: '3'
+services:
+  php-fpm:
+    image: sce-text-alert/php-fpm:latest
+    build:
+      context: ./services/php
+    ports:
+      - 9000
+    links:
+      - db
+    volumes:
+      - ./:/var/www
+    working_dir: /var/www
+    restart: always
+    env_file:
+      - .env
+  db:
+    image: sce-text-alert/mariadb:latest
+    build:
+      context: ./services/mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: homestead
+      MYSQL_USER: homestead
+      MYSQL_PASSWORD: secret
+    ports:
+      - 3306:3306
+  nginx:
+    image: sce-text-alert/nginx:latest
+    build:
+      context: ./services/nginx
+    volumes:
+      - ./:/var/www
+      - ./services/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./services/nginx/logs:/var/log/nginx
+      - ./services/nginx/sites:/etc/nginx/conf.d
+    working_dir: /var/www
+    ports:
+      - 8080:80
+    env_file:
+      - .env
+    links:
+      - php-fpm
+      - db
+    restart: always
+  composer:
+    build:
+      context: ./services/composer
+    volumes:
+      - ./:/app
+  node:
+    build:
+      context: ./services/node
+    volumes:
+      - ./:/var/www
