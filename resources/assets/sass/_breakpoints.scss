@@ -1,10 +1,17 @@
 $largePhone: 480px;
+$SmallTablet: 560px;
 $tabletPortrait: 768px;
 $tabletLandscape: 1024px;
 $desktop: 1500px;
 
 @mixin for-large-phone {
     @media (min-width: $largePhone) {
+        @content;
+    }
+}
+
+@mixin for-small-tablet-up {
+    @media (min-width: $SmallTablet) {
         @content;
     }
 }

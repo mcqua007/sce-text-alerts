@@ -235,28 +235,6 @@ footer {
 
 @include for-large-phone(){
 	.home-header {
-		.text {
-			h1 {
-				font-size: 2.75em;
-			}
-		}
-	}
-	button, a.go-back {
-		width: auto;
-	}
-	.start-over {
-		text-align: right;
-	}
-	.progress-bar {
-		font-size: 16px;
-		span {
-			border-top-width: 15px;
-			padding-top: 8px;
-		}
-	}
-}
-@include for-tablet-portrait-up(){
-	.home-header {
 		@include pie-clearfix;
 		.image {
 			float: left;
@@ -278,10 +256,41 @@ footer {
 				transform: translateY(-50%);
 			}
 			h1 {
-				font-size: 2.25em;
+				font-size: 1.25em;
 			}
 			img {
 				width: 50%;
+			}
+		}
+	}
+	button, a.go-back {
+		width: auto;
+	}
+	.start-over {
+		text-align: right;
+	}
+	.progress-bar {
+		font-size: 16px;
+		span {
+			border-top-width: 15px;
+			padding-top: 8px;
+		}
+	}
+}
+@include for-small-tablet-up(){
+	.home-header {
+		.text {
+			h1 {
+				font-size: 1.6em;
+			}
+		}
+	}
+}
+@include for-tablet-portrait-up(){
+	.home-header {
+		.text {
+			h1 {
+				font-size: 2.25em;
 			}
 		}
 	}
