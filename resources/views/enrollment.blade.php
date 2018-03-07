@@ -26,11 +26,11 @@
         <div class="name-group">
             <div class="first-name bold-label">
                 {!! Form::label('first_name', 'First Name') !!} <span class="required-text">*</span>
-                {!! Form::text('first_name', $input['first_name'], array('placeholder'=>'Jane')) !!}
+                {!! Form::text('first_name', $input['first_name'], array('placeholder'=>'Jane', 'maxlength'=>'30')) !!}
             </div>
             <div class="last-name bold-label">
                 {!! Form::label('last_name', 'Last Name') !!} <span class="required-text">*</span>
-                {!! Form::text('last_name', $input['last_name'], array('placeholder'=>'Doe')) !!}
+                {!! Form::text('last_name', $input['last_name'], array('placeholder'=>'Doe', 'maxlength'=>'30')) !!}
             </div>
         </div>
         <div class="service-address-group">
@@ -43,18 +43,21 @@
             </div>
             <div class="street-name">
                 {!! Form::label('street_name', 'Street Name') !!} <span class="required-text">*</span>
-                {!! Form::text('street_name', $input['street_name'], array('placeholder'=>'Main St.', 'maxlength'=>'10')) !!}
+                {!! Form::text('street_name', $input['street_name'], array('placeholder'=>'Main St.', 'maxlength'=>'30')) !!}
             </div>
             <div class="zip-code">
                 {!! Form::label('zip_code', 'Zip Code') !!} <span class="required-text">*</span>
-                {!! Form::text('zip_code', $input['zip_code'], array('placeholder'=>'#####', 'maxlength'=>'10')) !!}
+                {!! Form::text('zip_code', $input['zip_code'], array('placeholder'=>'#####', 'maxlength'=>'5')) !!}
             </div>
         </div>
         <div class="contact-group">
             <div class="phone-group">
                 <div class="bold-label">
                     {!! Form::label('phone', 'Mobile Phone') !!} <span class="required-text">*</span>
-                    {!! Form::text('phone', $input['phone'], array('placeholder'=>'###-###-####', 'maxlength'=>'25')) !!}
+                    <div class="input-wrap">
+                        <div class="pre-input">1-</div>
+                        {!! Form::text('phone', $input['phone'], array('placeholder'=>'(###)-###-####', 'maxlength'=>'14')) !!}
+                    </div>
                 </div>
                 <div class="checkbox-label">
                     {!! Form::checkbox('mobile_optin', 1, $input['mobile_optin'], ['id'=>'mobile_optin']) !!}
@@ -64,7 +67,7 @@
             <div class="email-group">
                 <div class="bold-label">
                     {!! Form::label('email', 'Email Address') !!}
-                    {!! Form::text('email', $input['email'], array('placeholder'=>'email@example.com')) !!}
+                    {!! Form::text('email', $input['email'], array('placeholder'=>'email@example.com', 'maxlength'=>'254')) !!}
                 </div>
                 <div class="checkbox-label">
                     {!! Form::checkbox('email_optin', 1, $input['email_optin'], ['id'=>'email_optin']) !!}

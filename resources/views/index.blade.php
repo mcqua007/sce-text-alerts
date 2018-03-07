@@ -27,7 +27,10 @@
 	{!!Form::open(array('route' => ['enrollment']))!!}
 		<div class="highlight-box bold-label">
 			{!! Form::label('service_account_number', 'Service Account Number') !!}
-			{!! Form::text('service_account_number', $input['service_account_number'], array( 'placeholder'=>'3-###-####-##', 'maxlength'=>'13')) !!}
+			<div class="input-wrap">
+				<div class="pre-input">3-</div>
+				{!! Form::text('service_account_number', $input['service_account_number'], array( 'placeholder'=>'###-####-##', 'maxlength'=>'11')) !!}
+			</div>
 		</div>
 
     <button type="submit">Get Started</button>

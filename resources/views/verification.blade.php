@@ -9,10 +9,10 @@
     <p>Please confirm your account information.</p>
 
     <div class="highlight-box">
-        <p><strong>Service Account Number: </strong>{{Session::get('service_account_number')}}</p>
+        <p><strong>Service Account Number: </strong>3-{{Session::get('service_account_number')}}</p>
         <p><strong>Name: </strong>{{Session::get('last_name')}}, {{Session::get('first_name')}}</p>
         <p><strong>Service Address: </strong>{{Session::get('street_number')}} {{Session::get('street_name')}}, {{Session::get('zip_code')}}</p>
-        <p><strong>Mobile Phone: </strong>{{Session::get('phone')}}</p>
+        <p><strong>Mobile Phone: </strong>1-{{Session::get('phone')}}</p>
         <p><strong>Text Alerts: </strong>@if( Session('on_peak_alert') == 1 )On-Peak @endif @if( Session('on_peak_alert') == 1 && Session('off_peak_alert') == 1 ) &amp; @endif
             @if( Session('off_peak_alert') == 1 )Off-Peak @endif</p>
         <p><strong>Email Address: </strong>{{Session::get('email')}}</p>

@@ -140,6 +140,17 @@ a.go-back {
 		transform: rotate(-135deg);
 	}
 }
+.input-wrap {
+	display: table;
+	width: 100%;
+	.pre-input {
+		display: table-cell;
+		width: 20px;
+	}
+	input {
+		display: table-cell;
+	}
+}
 input[type="text"] {
 	display: block;
 	width: 100%;

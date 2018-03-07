@@ -28,7 +28,7 @@ class IndexRequest extends Request
             return [];
         }
         return [
-            'service_account_number' => ['required', 'min:10', 'max:13', 'regex:/^[0-9 \-]+$/']
+            'service_account_number' => ['required', 'min:11', 'max:11', 'regex:/^[0-9 \-]+$/']
         ];
     }
 }

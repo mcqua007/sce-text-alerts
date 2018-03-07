@@ -37,7 +37,7 @@ class MainController extends Controller
 
         // Get the service_account_number if in the session and display it in the view
         $input = [
-            'service_account_number' => ($request->session()->has('service_account_number')) ? $request->session()->get('service_account_number') : '3-'
+            'service_account_number' => ($request->session()->has('service_account_number')) ? $request->session()->get('service_account_number') : ''
         ];
 
     	return view('index')->with(['account' => $account, 'input' => $input]);
