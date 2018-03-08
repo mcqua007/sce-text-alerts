@@ -123,6 +123,8 @@ button {
 		border-top: solid 3px $black;
 
 		margin-left: 0.5em;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
 		transform: rotate(45deg);
 	}
 }
@@ -137,6 +139,8 @@ a.go-back {
 		border-top: solid 3px $black;
 
 		margin-right: 0.5em;
+		-webkit-transform: rotate(-135deg);
+		-ms-transform: rotate(-135deg);
 		transform: rotate(-135deg);
 	}
 }
@@ -146,6 +150,8 @@ a.go-back {
 	.pre-input {
 		display: table-cell;
 		width: 20px;
+		vertical-align: middle;
+		padding-top: 0.5em;
 	}
 	input {
 		display: table-cell;
