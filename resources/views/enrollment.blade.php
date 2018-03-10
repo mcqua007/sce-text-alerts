@@ -26,11 +26,11 @@
         <div class="name-group">
             <div class="first-name bold-label">
                 {!! Form::label('first_name', 'First Name') !!} <span class="required-text">*</span>
-                {!! Form::text('first_name', $input['first_name'], array('placeholder'=>'Jane', 'maxlength'=>'30')) !!}
+                {!! Form::text('first_name', $input['first_name'], array('placeholder'=>'Jane', 'maxlength'=>'50')) !!}
             </div>
             <div class="last-name bold-label">
                 {!! Form::label('last_name', 'Last Name') !!} <span class="required-text">*</span>
-                {!! Form::text('last_name', $input['last_name'], array('placeholder'=>'Doe', 'maxlength'=>'30')) !!}
+                {!! Form::text('last_name', $input['last_name'], array('placeholder'=>'Doe', 'maxlength'=>'50')) !!}
             </div>
         </div>
         <div class="service-address-group">
@@ -43,7 +43,7 @@
             </div>
             <div class="street-name">
                 {!! Form::label('street_name', 'Street Name') !!} <span class="required-text">*</span>
-                {!! Form::text('street_name', $input['street_name'], array('placeholder'=>'Main St.', 'maxlength'=>'30')) !!}
+                {!! Form::text('street_name', $input['street_name'], array('placeholder'=>'Main St.', 'maxlength'=>'50')) !!}
             </div>
             <div class="zip-code">
                 {!! Form::label('zip_code', 'Zip Code') !!} <span class="required-text">*</span>

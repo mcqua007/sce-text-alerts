@@ -8,6 +8,8 @@ class Account extends Model
 {
     protected $table = 'accounts';
 
+    public $timestamps = false;
+
     protected $casts = [
         'mobile_optin' => 'boolean',
         'email_optin' => 'boolean',

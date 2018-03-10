@@ -28,10 +28,10 @@ class EnrollmentRequest extends Request
             return [];
         }
         return [
-            'first_name' => ['required', 'max:30', 'regex:/^[a-zA-Z \-]+$/'],
-            'last_name' => ['required', 'max:30', 'regex:/^[a-zA-Z \-]+$/'],
+            'first_name' => ['required', 'max:50', 'regex:/^[a-zA-Z \-]+$/'],
+            'last_name' => ['required', 'max:50', 'regex:/^[a-zA-Z \-]+$/'],
             'street_number' => ['required', 'max:10', 'regex:/^[0-9 \/\-]+$/'],
-            'street_name' => ['required', 'max:30', 'regex:/^[0-9a-zA-Z \.\-]+$/'],
+            'street_name' => ['required', 'max:50', 'regex:/^[0-9a-zA-Z \.\-]+$/'],
             'zip_code' => ['required', 'digits:5'],
             'phone' => ['required', 'min:14', 'max:14', 'regex:/^[\+0-9 \(\)\-]+$/'],
             'mobile_optin' => ['required', 'boolean'],
