@@ -13,6 +13,7 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
+    elixir.config.css.autoprefix.options.browsers = ['> 1%', 'Last 2 versions', 'IE 9']; // to query browsers to prefix for https://github.com/ai/browserslist#queries
     mix.sass('styles.scss');
     mix.browserify('index.js');
 });
