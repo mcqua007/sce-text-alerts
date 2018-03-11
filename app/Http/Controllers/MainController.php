@@ -34,6 +34,10 @@ class MainController extends Controller
      */
     public function index(Request $request, Account $account)
     {
+        if ($request->session()->has('saved')) {
+            $request->session()->flush();
+            //already on index
+        }
 
         // Get the service_account_number if in the session and display it in the view
         $input = [
@@ -53,6 +57,10 @@ class MainController extends Controller
      */
     public function enrollment(IndexRequest $request, Account $account)
     {
+        if ($request->session()->has('saved')) {
+            $request->session()->flush();
+            return redirect()->route('index');
+        }
 
          // Get the inputs if in the session and display it in the view
         $getInput = function() use ($request) {
@@ -103,6 +111,10 @@ class MainController extends Controller
      */
     public function verification(EnrollmentRequest $request, Account $account)
     {
+        if ($request->session()->has('saved')) {
+            $request->session()->flush();
+            return redirect()->route('index');
+        }
 
         //Check if user trying to skip into this step without a set service_account_number
         if($request->method() !== 'POST'){
@@ -159,7 +171,6 @@ class MainController extends Controller
     public function confirmation(Request $request, Account $account)
     {
 
-        //Check if user trying to skip into this step without a set service_account_number
         if($request->method() !== 'POST'){
             //Array of required session keys to display page
             $requiredInStep = [
@@ -195,20 +206,6 @@ class MainController extends Controller
             $account->save();
             $request->session()->put('saved', true);
         }
-
-        // Clear inputs stored in session
-        $request->session()->forget('service_account_number');
-        $request->session()->forget('first_name');
-        $request->session()->forget('last_name');
-        $request->session()->forget('street_number');
-        $request->session()->forget('street_name');
-        $request->session()->forget('zip_code');
-        $request->session()->forget('phone');
-        $request->session()->forget('mobile_optin');
-        $request->session()->forget('email');
-        $request->session()->forget('email_optin');
-        $request->session()->forget('on_peak_alert');
-        $request->session()->forget('off_peak_alert');
 
 
         return view('confirmation')->with('account', $account);
