@@ -201,6 +201,17 @@ class MainController extends Controller
         // Get all the session data and update the model with it
         $account = $account->fill($request->session()->all());
 
+        //Clean the SAN (remove dashes and leading 0s)
+        $originalSAN = $request->session()->get('service_account_number');
+        $cleanSAN = str_replace('-','',$originalSAN);
+        $cleanSAN = ltrim($cleanSAN, '0');
+        $account->service_account_number = $cleanSAN;
+
+        //Clean the Mobile number (remove parentheses and dashes then add a 1 to start of number)
+        $originalPhone = $request->session()->get('phone');
+        $cleanPhone = '1' . str_replace(array('-',' ','(',')'),'',$originalPhone);
+        $account->phone = $cleanPhone;
+
         if (!$request->session()->has('saved')) {
             // Save the model.
             $account->save();
