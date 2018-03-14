@@ -110,6 +110,18 @@ button, a.go-back {
 	font-weight: bold;
 	width: 100%;
 	text-align: center;
+
+	-webkit-transition-property: background-color;
+	-moz-transition-property: background-color;
+	transition-property: background-color;
+
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	
+	&:hover {
+		background-color: $button-hover;
+	}
 }
 button {
 	-webkit-appearance: none;
