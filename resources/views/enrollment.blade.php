@@ -54,10 +54,7 @@
             <div class="phone-group">
                 <div class="bold-label">
                     {!! Form::label('phone', 'Mobile Phone') !!} <span class="required-text">*</span>
-                    <div class="input-wrap">
-                        <div class="pre-input">1-</div>
-                        {!! Form::text('phone', $input['phone'], array('placeholder'=>'(###)-###-####', 'maxlength'=>'14')) !!}
-                    </div>
+                    {!! Form::text('phone', $input['phone'], array('placeholder'=>'(###)-###-####', 'maxlength'=>'14')) !!}
                 </div>
                 <div class="checkbox-label">
                     {!! Form::checkbox('mobile_optin', 1, $input['mobile_optin'], ['id'=>'mobile_optin']) !!}

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     if (ui.phoneNumber) {
         const mask = new IMask(ui.phoneNumber, {
-            mask: '(000)-000-0000'
+            mask: '(000) 000-0000'
         });
     }
     if (ui.zipCode) {

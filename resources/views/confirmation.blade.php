@@ -18,7 +18,7 @@
     <p><strong style="color:#cccccc;">street_number:</strong> {{$account->street_number}}</p>
     <p><strong style="color:#cccccc;">street_name:</strong> {{$account->street_name}}</p>
     <p><strong style="color:#cccccc;">zip_code:</strong> {{$account->zip_code}}</p>
-    <p><strong style="color:#cccccc;">phone:</strong> 1-{{$account->phone}}</p>
+    <p><strong style="color:#cccccc;">phone:</strong> {{$account->phone}}</p>
 	<p><strong style="color:#cccccc;">mobile_optin:</strong> <?php if ($account->mobile_optin){echo 'yes';}else{echo 'no';} ?></p>
 	<p><strong style="color:#cccccc;">email:</strong> <?php if ($account->email){echo $account->email;}else{echo '-';} ?></p>
     <p><strong style="color:#cccccc;">email_optin:</strong> <?php if ($account->email_optin){echo 'yes';}else{echo 'no';} ?></p>
