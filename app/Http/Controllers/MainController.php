@@ -183,8 +183,8 @@ class MainController extends Controller
                 'mobile_optin',
                 'service_account_number',
             ];
-            // Check if they're set in session
-            if($this->verifySessionHasInputs($requiredInStep, $request->session())){
+            // Check if they're set in session and only show this is "saved" is true (prevents manual jump to confirmation before submitting form on verification page)
+            if($this->verifySessionHasInputs($requiredInStep, $request->session()) && $request->session()->has('saved')){
                 // Good render page
                 return view('confirmation')->with('account', $account);
             } else {
