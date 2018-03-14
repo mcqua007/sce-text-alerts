@@ -8,4 +8,5 @@
     <h1>Confirmation</h1>
     <p class="highlight-text">Thank you for enrolling in TOU Text Alerts!</p>
     <p>You will start receiving your text alerts soon. Please allow up to five business days for your enrollment to be processed.</p>
+    <a href="{{route('start-over')}}" class="basic-link">Enroll another mobile number</a> 
 @endsection
