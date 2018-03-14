@@ -36,7 +36,7 @@ class MainController extends Controller
     {
         if ($request->session()->has('saved')) {
             $request->session()->flush();
-            //already on index
+            return redirect()->route('index');
         }
 
         // Get the service_account_number if in the session and display it in the view
