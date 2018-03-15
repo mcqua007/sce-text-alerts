@@ -29,3 +29,5 @@ workspace.xml
 /public/css/app.css
 /public/js/index.js
 /public/js/index.js.map
+/services/nginx/logs/access.log
+/services/nginx/logs/error.log
