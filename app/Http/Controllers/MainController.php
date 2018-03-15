@@ -232,4 +232,14 @@ class MainController extends Controller
         return redirect()->route('index');
     }
 
+    /**
+     * @param Request $request
+     * @return $this|\Illuminate\Http\RedirectResponse
+     */
+    public function token_mismatch(Request $request)
+    {
+        $request->session()->flush();
+        return response()->view('errors/token');
+    }
+
 }

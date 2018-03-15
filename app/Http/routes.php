@@ -26,3 +26,4 @@ Route::any('/confirmation', ['uses' => 'MainController@confirmation', 'as' => 'c
 
 Route::any('/start-over', ['uses' => 'MainController@start_over', 'as' => 'start-over']);
 
+Route::any('/token-mismatch', ['uses' => 'MainController@token_mismatch', 'as' => 'token-mismatch']);

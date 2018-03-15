@@ -8,6 +8,7 @@ use Illuminate\Support\MessageBag;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Session\TokenMismatchException;
 
 class Handler extends ExceptionHandler
 {
@@ -50,6 +51,9 @@ class Handler extends ExceptionHandler
 
         if ($e instanceof TooManyAttemptsException) {
             return back()->withErrors(new MessageBag(["You've exceeded the maximum number of attempts please try back later"]))->withInput($request->all());
+        }
+        if ($e instanceof TokenMismatchException) {
+            return redirect()->route('token-mismatch');
         }
 
         return parent::render($request, $e);
