@@ -11,6 +11,10 @@
 |
 */
 
+if (env('APP_ENV') === 'production') {
+    URL::forceSchema('https');
+}
+
 Route::get('/', ['uses' => 'MainController@index', 'as' => 'index']);
 
 Route::any('/enrollment', ['uses' => 'MainController@enrollment', 'as' => 'enrollment']);
