@@ -41,9 +41,9 @@
             </a>
         </div>
         @yield('home-header')
-        <div class="wrapper">
+        <main id="main-content" class="wrapper" role="main">
 			@yield('content')
-		</div>
+		</main>
         <footer>
             <div class="wrapper smaller"><a class="basic-link" href="https://www.sce.com/wps/portal/home/privacy/" target="_blank">Privacy Policy</a> | &copy; <?php echo date("Y"); ?> Southern California Edison. All rights reserved.</div>
         </footer>
