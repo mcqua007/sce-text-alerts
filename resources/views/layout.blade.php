@@ -39,7 +39,7 @@
 		<div class="wrapper">
             <a class="logo" href="http://sce.com">
                 <svg width="149" height="53">
-                    <image style="-webkit-user-select: none" xlink:href="/img/logo.svg" src="/img/logo.png" width="149" height="53" />
+                    <image style="-webkit-user-select: none" xlink:href="/img/logo.svg" src="/img/logo.png" width="149" height="53" alt="SCE Logo" />
                 </svg>
             </a>
         </div>
