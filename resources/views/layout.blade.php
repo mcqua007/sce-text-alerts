@@ -33,6 +33,9 @@
         <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     </head>
 	<body>
+        <ul class="skip-links">
+            <li><a href="#main-content">Skip to the main content</a></li>
+        </ul>
 		<div class="wrapper">
             <a class="logo" href="http://sce.com">
                 <svg width="149" height="53">
