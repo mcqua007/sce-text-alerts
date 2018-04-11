@@ -21,7 +21,7 @@
     <h2>Terms and Conditions</h2>
     
 
-    <p>For customers enrolled in TOU Text Alerts, Southern California Edison (SCE) will send daily notifications of peak hours based on the selected alert choice. Notifications can be delivered through text messages only. Message and data rates may apply. SCE does not guarantee receipt of text alerts. As a user of TOU Text Alerts, it is your responsibility to ensure that SCE has current and accurate contact information. Enrolled customers can update their alert selection or terminate participation in the program at any time by responding &ldquo;STOP&rdquo; or contacting SCE at 800-655-4555.</p>
+    <p>For customers enrolled in TOU Text Alerts, Southern California Edison (SCE) will send daily notifications of peak hours based on the selected alert choice. Notifications can be delivered through text messages only. Message and data rates may apply. SCE does not guarantee receipt of text alerts. As a user of TOU Text Alerts, it is your responsibility to ensure that SCE has current and accurate contact information. Enrolled customers can update their alert selection or terminate participation in the program at any time by responding &ldquo;END&rdquo; or contacting SCE at 800-655-4555.</p>
     {!!Form::open(array('route' => ['confirmation']))!!}
     <button type="submit">Enroll Now</button>
     <a href="{{route('enrollment')}}" class="go-back">Go Back</a>
