@@ -9,7 +9,7 @@
 		</div>
 		<div class="text">
 			<div class="text-inner-wrap">
-				<h1>Time-Of-Use (TOU)<br> Text Alert Enrollment</h1>
+				<h1>Residential<br> Time-Of-Use (TOU)<br> Text Alert Enrollment</h1>
 				<img src="/img/off-peak.png" alt="Clock and mobile device receiving a text alert." />
 			</div>
 		</div>
@@ -26,12 +26,13 @@
     @include('partials.errors')
 	{!!Form::open(array('route' => ['enrollment']))!!}
 		<div class="highlight-box bold-label">
-			{!! Form::label('service_account_number', 'Service Account Number') !!}
+			{!! Form::label('service_account_number', 'Residential Service Account Number') !!}
 			<div class="input-wrap">
 				<div class="pre-input">3-</div>
 				{!! Form::text('service_account_number', $input['service_account_number'], array( 'placeholder'=>'###-####-##', 'maxlength'=>'11')) !!}
 			</div>
 		</div>
+		<p style="font-size: 14px;"><strong>Note: </strong>This service is currently not available for commercial business customer accounts.</p>
 
     <button type="submit">Get Started</button>
 	{!!Form::close()!!}
